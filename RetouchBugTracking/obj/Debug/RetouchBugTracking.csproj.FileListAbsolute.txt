@@ -1,0 +1,11 @@
+C:\Users\HsnHs\OneDrive\Belgeler\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.csproj.AssemblyReference.cache
+C:\Users\HsnHs\OneDrive\Belgeler\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.csproj.SuggestedBindingRedirects.cache
+C:\Users\HsnHs\OneDrive\Belgeler\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.Properties.Resources.resources
+C:\Users\HsnHs\OneDrive\Belgeler\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.RetouchTracking.resources
+C:\Users\HsnHs\OneDrive\Belgeler\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.csproj.GenerateResource.cache
+C:\Users\HsnHs\OneDrive\Belgeler\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.csproj.CoreCompileInputs.cache
+C:\Users\HsnHs\OneDrive\Belgeler\GitHub\RetouchBugTracking\RetouchBugTracking\bin\Debug\RetouchBugTracking.exe.config
+C:\Users\HsnHs\OneDrive\Belgeler\GitHub\RetouchBugTracking\RetouchBugTracking\bin\Debug\RetouchBugTracking.exe
+C:\Users\HsnHs\OneDrive\Belgeler\GitHub\RetouchBugTracking\RetouchBugTracking\bin\Debug\RetouchBugTracking.pdb
+C:\Users\HsnHs\OneDrive\Belgeler\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.exe
+C:\Users\HsnHs\OneDrive\Belgeler\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.pdb

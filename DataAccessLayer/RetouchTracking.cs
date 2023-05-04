@@ -14,6 +14,8 @@ namespace DataAccessLayer
         public DateTime retouchTransactionDate { get; set; }
         public Int16 personnelRegisterID { get; set; }
         public string personal { get; set; }
+        public string username { get; set; }
+        public string nameSurname { get; set; }
 
     }
 }

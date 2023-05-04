@@ -28,55 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.TSSL_userInfo = new System.Windows.Forms.ToolStripStatusLabel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tb_barcode = new System.Windows.Forms.TextBox();
+            this.cb_faultList = new System.Windows.Forms.ComboBox();
             this.dgv_list = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.statusStrip1.SuspendLayout();
+            this.TSSL_userInfo = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btn_delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_list)).BeginInit();
+            this.TSSL_userInfo.SuspendLayout();
             this.SuspendLayout();
             // 
-            // statusStrip1
+            // tb_barcode
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TSSL_userInfo});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 591);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(878, 22);
-            this.statusStrip1.TabIndex = 0;
-            this.statusStrip1.Text = "statusStrip1";
+            this.tb_barcode.Location = new System.Drawing.Point(155, 38);
+            this.tb_barcode.Name = "tb_barcode";
+            this.tb_barcode.Size = new System.Drawing.Size(134, 20);
+            this.tb_barcode.TabIndex = 2;
+            this.tb_barcode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_barcode_KeyDown);
             // 
-            // TSSL_userInfo
+            // cb_faultList
             // 
-            this.TSSL_userInfo.Name = "TSSL_userInfo";
-            this.TSSL_userInfo.Size = new System.Drawing.Size(118, 17);
-            this.TSSL_userInfo.Text = "toolStripStatusLabel1";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(155, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(134, 20);
-            this.textBox1.TabIndex = 2;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 38);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(126, 21);
-            this.comboBox1.TabIndex = 1;
+            this.cb_faultList.FormattingEnabled = true;
+            this.cb_faultList.Location = new System.Drawing.Point(12, 38);
+            this.cb_faultList.Name = "cb_faultList";
+            this.cb_faultList.Size = new System.Drawing.Size(126, 21);
+            this.cb_faultList.TabIndex = 1;
             // 
             // dgv_list
             // 
+            this.dgv_list.AllowUserToAddRows = false;
+            this.dgv_list.AllowUserToDeleteRows = false;
+            this.dgv_list.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_list.Location = new System.Drawing.Point(1, 139);
             this.dgv_list.Name = "dgv_list";
+            this.dgv_list.ReadOnly = true;
+            this.dgv_list.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_list.Size = new System.Drawing.Size(877, 474);
             this.dgv_list.TabIndex = 3;
+            this.dgv_list.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_list_CellClick);
             // 
             // label1
             // 
@@ -98,37 +92,66 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Hata Liste";
             // 
+            // TSSL_userInfo
+            // 
+            this.TSSL_userInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.TSSL_userInfo.Location = new System.Drawing.Point(0, 591);
+            this.TSSL_userInfo.Name = "TSSL_userInfo";
+            this.TSSL_userInfo.Size = new System.Drawing.Size(878, 22);
+            this.TSSL_userInfo.TabIndex = 4;
+            this.TSSL_userInfo.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.Location = new System.Drawing.Point(791, 110);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_delete.Size = new System.Drawing.Size(75, 23);
+            this.btn_delete.TabIndex = 5;
+            this.btn_delete.Text = "SİL";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
             // RetouchTracking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 613);
+            this.Controls.Add(this.btn_delete);
+            this.Controls.Add(this.TSSL_userInfo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv_list);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.cb_faultList);
+            this.Controls.Add(this.tb_barcode);
             this.MinimumSize = new System.Drawing.Size(894, 652);
             this.Name = "RetouchTracking";
             this.Text = "Rötuş Takip";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.RetouchTracking_Load);
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_list)).EndInit();
+            this.TSSL_userInfo.ResumeLayout(false);
+            this.TSSL_userInfo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel TSSL_userInfo;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox tb_barcode;
+        private System.Windows.Forms.ComboBox cb_faultList;
         private System.Windows.Forms.DataGridView dgv_list;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.StatusStrip TSSL_userInfo;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.Button btn_delete;
     }
 }

@@ -8,7 +8,7 @@ namespace DataAccessLayer
 {
     public class Staff
     {
-        public Int16 ID { get; set; }
+        public int ID { get; set; }
         public string nameSurname { get; set; }
         public Int16 departmentID { get; set; }
         public string department { get; set; }

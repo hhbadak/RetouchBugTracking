@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetouchBugTracking", "RetouchBugTracking\RetouchBugTracking.csproj", "{846E5230-4C79-4889-AAC3-CF3E7017ED4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{C1235E52-704A-4C13-B667-80BDFB4C3047}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{C0F4EA64-0071-42C2-82CD-B39E98810985}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{846E5230-4C79-4889-AAC3-CF3E7017ED4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{846E5230-4C79-4889-AAC3-CF3E7017ED4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{846E5230-4C79-4889-AAC3-CF3E7017ED4A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C1235E52-704A-4C13-B667-80BDFB4C3047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1235E52-704A-4C13-B667-80BDFB4C3047}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1235E52-704A-4C13-B667-80BDFB4C3047}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1235E52-704A-4C13-B667-80BDFB4C3047}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0F4EA64-0071-42C2-82CD-B39E98810985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0F4EA64-0071-42C2-82CD-B39E98810985}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0F4EA64-0071-42C2-82CD-B39E98810985}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0F4EA64-0071-42C2-82CD-B39E98810985}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

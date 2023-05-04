@@ -9,3 +9,7 @@ C:\Users\HsnHs\OneDrive\Belgeler\GitHub\RetouchBugTracking\RetouchBugTracking\bi
 C:\Users\HsnHs\OneDrive\Belgeler\GitHub\RetouchBugTracking\RetouchBugTracking\bin\Debug\RetouchBugTracking.pdb
 C:\Users\HsnHs\OneDrive\Belgeler\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.exe
 C:\Users\HsnHs\OneDrive\Belgeler\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.pdb
+C:\Users\HsnHs\OneDrive\Belgeler\GitHub\RetouchBugTracking\RetouchBugTracking\bin\Debug\DataAccessLayer.dll
+C:\Users\HsnHs\OneDrive\Belgeler\GitHub\RetouchBugTracking\RetouchBugTracking\bin\Debug\DataAccessLayer.pdb
+C:\Users\HsnHs\OneDrive\Belgeler\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.csproj.CopyComplete
+C:\Users\HsnHs\OneDrive\Belgeler\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.LoginPage.resources

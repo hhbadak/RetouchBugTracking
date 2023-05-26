@@ -36,11 +36,15 @@ namespace RetouchBugTracking
             cb_faultList.ValueMember = "Id";
             cb_faultList.DisplayMember = "errorDescription";
             cb_faultList.DataSource = dm.getRetouchingMistakes();
+
+            cb_productCode.ValueMember = "Kimlik";
+            cb_productCode.DisplayMember = "productDescription";
+
         }
 
         private void loadGrid()
-        { 
-            var result= dm.logEntryListBySelectedDate(
+        {
+            var result = dm.logEntryListBySelectedDate(
                 new DataAccessLayer.RetouchTracking
                 {
                     retouchTransactionDate = Convert.ToDateTime(dtp_bring.Value.ToShortDateString())
@@ -70,7 +74,52 @@ namespace RetouchBugTracking
                 r["Rötuş Hata Giriş"] = rt[i].retouchTransactionDate.ToShortDateString();
                 r["Kullanıcı Adı"] = rt[i].username;
                 r["Dökümcü Sicil No"] = rt[i].personalID;
-                r["Döküm Tarihi"] = rt[i].productTransactionDate;
+                r["Döküm Tarihi"] = rt[i].productTransactionDate.ToShortDateString();
+
+                dt.Rows.Add(r);
+            }
+            dgv_list.DataSource = dt;
+
+            label4.Text = "Bakılan Ürün sayısı: " + dgv_list.RowCount.ToString();
+        } 
+        private void loadGridByFilter()
+        {
+            var result = dm.logEntryListProductionDate(
+                new DataAccessLayer.RetouchTracking
+                {
+                    retouchTransactionDate = Convert.ToDateTime(dtp_bring.Value.ToShortDateString()),
+                    retouchFault = cb_fault.Text,
+                    personalID = cb_personelRecord.Text,
+                    productTime = Convert.ToDateTime(dtp_productionDate.Value.ToShortDateString()),
+                    definition = cb_productCode.Text,
+                },
+                cbx_fault.Checked, cbx_personal.Checked, cbx_productCode.Checked, cbx_productionDate.Checked, cbx_bring.Checked); ;
+
+            dgv_list.DataSource = result;
+            var rt = result.OrderByDescending(r => r.RetouchTrackingID).ToList();
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("ID");
+            dt.Columns.Add("Barkod No");
+            dt.Columns.Add("Kod Tanım");
+            dt.Columns.Add("Hata Tanımı");
+            dt.Columns.Add("Rötuş Hata Giriş");
+            dt.Columns.Add("Kullanıcı Adı");
+            dt.Columns.Add("Dökümcü Sicil No");
+            dt.Columns.Add("Döküm Tarihi");
+
+            for (int i = 0; i < rt.Count; i++)
+            {
+                DataRow r = dt.NewRow();
+
+                r["ID"] = rt[i].RetouchTrackingID;
+                r["Barkod No"] = rt[i].barcode;
+                r["Kod Tanım"] = rt[i].definition;
+                r["Hata Tanımı"] = rt[i].fault;
+                r["Rötuş Hata Giriş"] = rt[i].retouchTransactionDate.ToShortDateString();
+                r["Kullanıcı Adı"] = rt[i].username;
+                r["Dökümcü Sicil No"] = rt[i].personalID;
+                r["Döküm Tarihi"] = rt[i].productTransactionDate.ToShortDateString();
 
                 dt.Rows.Add(r);
             }
@@ -122,7 +171,22 @@ namespace RetouchBugTracking
 
         private void btn_bring_Click(object sender, EventArgs e)
         {
-            loadGrid();
+
+            loadGridByFilter();
+        }
+
+        private void btn_productionDate_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btn_fault_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_personelRecord_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

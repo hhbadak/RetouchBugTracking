@@ -41,7 +41,7 @@
             // 
             // tb_password
             // 
-            this.tb_password.Location = new System.Drawing.Point(482, 173);
+            this.tb_password.Location = new System.Drawing.Point(603, 314);
             this.tb_password.Name = "tb_password";
             this.tb_password.PasswordChar = '*';
             this.tb_password.Size = new System.Drawing.Size(147, 20);
@@ -49,7 +49,7 @@
             // 
             // tb_username
             // 
-            this.tb_username.Location = new System.Drawing.Point(482, 95);
+            this.tb_username.Location = new System.Drawing.Point(603, 236);
             this.tb_username.Name = "tb_username";
             this.tb_username.Size = new System.Drawing.Size(147, 20);
             this.tb_username.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(479, 61);
+            this.label1.Location = new System.Drawing.Point(600, 202);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 16);
             this.label1.TabIndex = 0;
@@ -68,7 +68,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(479, 139);
+            this.label2.Location = new System.Drawing.Point(600, 280);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 16);
             this.label2.TabIndex = 0;
@@ -77,18 +77,17 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(36, 61);
-            this.pictureBox1.MaximumSize = new System.Drawing.Size(394, 300);
+            this.pictureBox1.Location = new System.Drawing.Point(32, 12);
             this.pictureBox1.MinimumSize = new System.Drawing.Size(394, 300);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(394, 300);
+            this.pictureBox1.Size = new System.Drawing.Size(473, 603);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
             // btn_login
             // 
-            this.btn_login.Location = new System.Drawing.Point(482, 217);
+            this.btn_login.Location = new System.Drawing.Point(603, 358);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(78, 28);
             this.btn_login.TabIndex = 3;
@@ -98,7 +97,7 @@
             // 
             // btn_close
             // 
-            this.btn_close.Location = new System.Drawing.Point(567, 217);
+            this.btn_close.Location = new System.Drawing.Point(688, 358);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(62, 28);
             this.btn_close.TabIndex = 4;
@@ -110,7 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(878, 613);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.pictureBox1);
@@ -118,7 +117,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_username);
             this.Controls.Add(this.tb_password);
+            this.MaximumSize = new System.Drawing.Size(894, 652);
+            this.MinimumSize = new System.Drawing.Size(894, 652);
             this.Name = "LoginPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "LoginPage";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

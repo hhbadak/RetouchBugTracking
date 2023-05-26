@@ -36,6 +36,10 @@
             this.TSSL_userInfo = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.btn_delete = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dtp_bring = new System.Windows.Forms.DateTimePicker();
+            this.btn_bring = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_list)).BeginInit();
             this.TSSL_userInfo.SuspendLayout();
             this.SuspendLayout();
@@ -119,11 +123,56 @@
             this.btn_delete.UseVisualStyleBackColor = true;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(660, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(678, 13);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 20);
+            this.label4.TabIndex = 7;
+            // 
+            // dtp_bring
+            // 
+            this.dtp_bring.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_bring.Location = new System.Drawing.Point(379, 38);
+            this.dtp_bring.Name = "dtp_bring";
+            this.dtp_bring.Size = new System.Drawing.Size(92, 20);
+            this.dtp_bring.TabIndex = 8;
+            // 
+            // btn_bring
+            // 
+            this.btn_bring.Location = new System.Drawing.Point(603, 38);
+            this.btn_bring.Name = "btn_bring";
+            this.btn_bring.Size = new System.Drawing.Size(75, 23);
+            this.btn_bring.TabIndex = 9;
+            this.btn_bring.Text = "GETİR";
+            this.btn_bring.UseVisualStyleBackColor = true;
+            this.btn_bring.Click += new System.EventHandler(this.btn_bring_Click);
+            // 
             // RetouchTracking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 613);
+            this.Controls.Add(this.btn_bring);
+            this.Controls.Add(this.dtp_bring);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.TSSL_userInfo);
             this.Controls.Add(this.label2);
@@ -131,10 +180,11 @@
             this.Controls.Add(this.dgv_list);
             this.Controls.Add(this.cb_faultList);
             this.Controls.Add(this.tb_barcode);
+            this.MaximumSize = new System.Drawing.Size(894, 652);
             this.MinimumSize = new System.Drawing.Size(894, 652);
             this.Name = "RetouchTracking";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Rötuş Takip";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.RetouchTracking_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_list)).EndInit();
             this.TSSL_userInfo.ResumeLayout(false);
@@ -153,5 +203,9 @@
         private System.Windows.Forms.StatusStrip TSSL_userInfo;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker dtp_bring;
+        private System.Windows.Forms.Button btn_bring;
     }
 }

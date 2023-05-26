@@ -17,13 +17,16 @@ namespace DataAccessLayer
             cmd = con.CreateCommand();
         }
 
-        public List<RetouchTracking> logEntryList()
+       
+
+        public List<RetouchTracking> logEntryListBySelectedDate(RetouchTracking src)
         {
             List<RetouchTracking> rt = new List<RetouchTracking>();
             try
             {
-                cmd.CommandText = "SELECT rt.ID, rt.Barkod, rh.HataTanim, rt.IslemTarih, p.KullaniciAd, dsl.ad_soyad, u.DokumTarih FROM RotusTakip AS rt \r\nJOIN UT_D_Urunler AS u ON rt.Barkod = u.BarkodNo\r\nJOIN RotusHatalari AS rh ON rh.Id = rt.RotusHata_ID\r\nJOIN ES_Personeller AS p ON p.PersonelId = rt.PersonelSicil_ID\r\nJOIN dokum_sicil_liste AS dsl ON dsl.Kimlik = u.DokumcuId\r\nJOIN UT_D_Tezgahlar as t ON t.Id = u.TezgahId WHERE rt.IslemTarih = convert(date,getdate(),4)";
+                cmd.CommandText = "SELECT rt.ID, rt.Barkod, kl.tanim, rh.HataTanim, rt.IslemTarih, p.KullaniciAd, dsl.tanim, u.DokumTarih FROM RotusTakip AS rt\r\nJOIN UT_D_Urunler AS u ON rt.Barkod = u.BarkodNo\r\nJOIN RotusHatalari AS rh ON rh.Id = rt.RotusHata_ID\r\nJOIN ES_Personeller AS p ON p.PersonelId = rt.PersonelSicil_ID\r\nJOIN dokum_sicil_liste AS dsl ON dsl.Kimlik = u.DokumcuId\r\nJOIN kod_liste AS kl ON kl.Kimlik = u.TezgahKalipId\r\nJOIN UT_D_Tezgahlar as t ON t.Id = u.TezgahId WHERE rt.IslemTarih = @selectedDate";
                 cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@selectedDate", src.retouchTransactionDate);
                 con.Open();
 
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -33,11 +36,12 @@ namespace DataAccessLayer
                     {
                         RetouchTrackingID = reader.GetInt32(0),
                         barcode = reader.GetString(1),
-                        fault = reader.GetString(2),
-                        retouchTransactionDate = reader.GetDateTime(3),
-                        username = reader.GetString(4),
-                        nameSurname = reader.GetString(5),
-                        productTransactionDate = reader.GetDateTime(6)
+                        definition = reader.GetString(2),
+                        fault = reader.GetString(3),
+                        retouchTransactionDate = reader.GetDateTime(4),
+                        username = reader.GetString(5),
+                        personalID = reader.GetString(6),
+                        productTransactionDate = reader.GetDateTime(7)
                     };
                     rt.Add(model);
                 }

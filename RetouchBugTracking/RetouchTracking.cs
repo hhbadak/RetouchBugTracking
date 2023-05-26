@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Dynamic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -16,11 +17,12 @@ namespace RetouchBugTracking
     {
         DataModel dm = new DataModel();
         int retouchFaultID = 0;
+        int personelId = 0;
         public RetouchTracking()
         {
             InitializeComponent();
         }
-        int personelId = 0;
+
         private void RetouchTracking_Load(object sender, EventArgs e)
         {
 
@@ -37,17 +39,24 @@ namespace RetouchBugTracking
         }
 
         private void loadGrid()
-        {
-            dgv_list.DataSource = dm.logEntryList();
-            var rt = dm.logEntryList().OrderByDescending(r => r.RetouchTrackingID).ToList();
+        { 
+            var result= dm.logEntryListBySelectedDate(
+                new DataAccessLayer.RetouchTracking
+                {
+                    retouchTransactionDate = Convert.ToDateTime(dtp_bring.Value.ToShortDateString())
+                });
+
+            dgv_list.DataSource = result;
+            var rt = result.OrderByDescending(r => r.RetouchTrackingID).ToList();
             DataTable dt = new DataTable();
 
             dt.Columns.Add("ID");
             dt.Columns.Add("Barkod No");
+            dt.Columns.Add("Kod Tanım");
             dt.Columns.Add("Hata Tanımı");
             dt.Columns.Add("Rötuş Hata Giriş");
             dt.Columns.Add("Kullanıcı Adı");
-            dt.Columns.Add("Dökümcü Ad Soyad");
+            dt.Columns.Add("Dökümcü Sicil No");
             dt.Columns.Add("Döküm Tarihi");
 
             for (int i = 0; i < rt.Count; i++)
@@ -56,15 +65,18 @@ namespace RetouchBugTracking
 
                 r["ID"] = rt[i].RetouchTrackingID;
                 r["Barkod No"] = rt[i].barcode;
+                r["Kod Tanım"] = rt[i].definition;
                 r["Hata Tanımı"] = rt[i].fault;
                 r["Rötuş Hata Giriş"] = rt[i].retouchTransactionDate.ToShortDateString();
                 r["Kullanıcı Adı"] = rt[i].username;
-                r["Dökümcü Ad Soyad"] = rt[i].nameSurname;
+                r["Dökümcü Sicil No"] = rt[i].personalID;
                 r["Döküm Tarihi"] = rt[i].productTransactionDate;
 
                 dt.Rows.Add(r);
             }
             dgv_list.DataSource = dt;
+
+            label4.Text = "Bakılan Ürün sayısı: " + dgv_list.RowCount.ToString();
         }
 
         private void tb_barcode_KeyDown(object sender, KeyEventArgs e)
@@ -106,6 +118,11 @@ namespace RetouchBugTracking
         private void dgv_list_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             retouchFaultID = Convert.ToInt32(dgv_list.CurrentRow.Cells["ID"].Value);
+        }
+
+        private void btn_bring_Click(object sender, EventArgs e)
+        {
+            loadGrid();
         }
     }
 }

@@ -41,9 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodeList.cs" />
     <Compile Include="ConnectionStrings.cs" />
     <Compile Include="DataModel.cs" />
     <Compile Include="ManufacturedProducts.cs" />
+    <Compile Include="PersonalRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RetouchingMistakes.cs" />
     <Compile Include="RetouchTracking.cs" />

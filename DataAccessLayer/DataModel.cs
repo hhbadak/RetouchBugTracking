@@ -139,8 +139,54 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
-
-
+        public List<PersonalRecord> getPersonalRecord()
+        {
+            List<PersonalRecord> personalRecords = new List<PersonalRecord>();
+            try
+            {
+                cmd.CommandText = "SELECT Kimlik, Tanim FROM dokum_sicil_liste";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    PersonalRecord model = new PersonalRecord();
+                    model.ID = Convert.ToInt32(reader["Kimlik"]);
+                    model.defination = reader.GetString(1);
+                    personalRecords.Add(model);
+                }
+                return personalRecords;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
+        public List<CodeList> getCodeList()
+        {
+            List<CodeList> listCode = new List<CodeList>();
+            try
+            {
+                cmd.CommandText = "SELECT Kimlik, Tanim FROM kod_liste";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    CodeList model = new CodeList();
+                    model.ID = Convert.ToInt32(reader["Kimlik"]);
+                    model.defination = reader.GetString(1);
+                    listCode.Add(model);
+                }
+                return listCode;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
         public Staff getPersonal(int id)
         {
             try

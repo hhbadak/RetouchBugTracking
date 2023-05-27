@@ -37,9 +37,17 @@ namespace RetouchBugTracking
             cb_faultList.DisplayMember = "errorDescription";
             cb_faultList.DataSource = dm.getRetouchingMistakes();
 
-            cb_productCode.ValueMember = "Kimlik";
-            cb_productCode.DisplayMember = "productDescription";
+            cb_fault.ValueMember = "Id";
+            cb_fault.DisplayMember = "errorDescription";
+            cb_fault.DataSource = dm.getRetouchingMistakes();
 
+            cb_personelRecord.ValueMember = "Kimlik";
+            cb_personelRecord.DisplayMember = "defination";
+            cb_personelRecord.DataSource = dm.getPersonalRecord();
+
+            cb_productCode.ValueMember = "Kimlik";
+            cb_productCode.DisplayMember = "defination";
+            cb_productCode.DataSource = dm.getCodeList();
         }
 
         private void loadGrid()

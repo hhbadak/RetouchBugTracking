@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.tb_barcode = new System.Windows.Forms.TextBox();
-            this.cb_faultList = new System.Windows.Forms.ComboBox();
             this.dgv_list = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,25 +53,22 @@
             this.cb_productCode = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cbx_productCode = new System.Windows.Forms.CheckBox();
+            this.tb_fault = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_list)).BeginInit();
             this.TSSL_userInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // tb_barcode
             // 
-            this.tb_barcode.Location = new System.Drawing.Point(155, 38);
+            this.tb_barcode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_barcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tb_barcode.Location = new System.Drawing.Point(427, 46);
+            this.tb_barcode.Multiline = true;
             this.tb_barcode.Name = "tb_barcode";
-            this.tb_barcode.Size = new System.Drawing.Size(134, 20);
+            this.tb_barcode.Size = new System.Drawing.Size(358, 85);
             this.tb_barcode.TabIndex = 2;
             this.tb_barcode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_barcode_KeyDown);
-            // 
-            // cb_faultList
-            // 
-            this.cb_faultList.FormattingEnabled = true;
-            this.cb_faultList.Location = new System.Drawing.Point(12, 38);
-            this.cb_faultList.Name = "cb_faultList";
-            this.cb_faultList.Size = new System.Drawing.Size(126, 21);
-            this.cb_faultList.TabIndex = 1;
             // 
             // dgv_list
             // 
@@ -86,29 +82,36 @@
             this.dgv_list.Name = "dgv_list";
             this.dgv_list.ReadOnly = true;
             this.dgv_list.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_list.Size = new System.Drawing.Size(877, 474);
+            this.dgv_list.Size = new System.Drawing.Size(877, 449);
             this.dgv_list.TabIndex = 3;
             this.dgv_list.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_list_CellClick);
+            this.dgv_list.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_list_CellContentClick);
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(152, 13);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(502, 1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.Size = new System.Drawing.Size(204, 42);
             this.label1.TabIndex = 0;
             this.label1.Text = "Barkod No";
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(12, 13);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(173, 3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 13);
+            this.label2.Size = new System.Drawing.Size(101, 42);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Hata Liste";
+            this.label2.Text = "Hata";
             // 
             // TSSL_userInfo
             // 
@@ -128,6 +131,7 @@
             // 
             // btn_delete
             // 
+            this.btn_delete.Enabled = false;
             this.btn_delete.Location = new System.Drawing.Point(791, 110);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -135,6 +139,7 @@
             this.btn_delete.TabIndex = 5;
             this.btn_delete.Text = "SİL";
             this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Visible = false;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // label3
@@ -155,91 +160,111 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(678, 13);
+            this.label4.Location = new System.Drawing.Point(866, 20);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 20);
+            this.label4.Size = new System.Drawing.Size(15, 20);
             this.label4.TabIndex = 7;
+            this.label4.Text = "-";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dtp_bring
             // 
+            this.dtp_bring.Enabled = false;
             this.dtp_bring.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_bring.Location = new System.Drawing.Point(464, 30);
             this.dtp_bring.Name = "dtp_bring";
             this.dtp_bring.Size = new System.Drawing.Size(92, 20);
             this.dtp_bring.TabIndex = 8;
+            this.dtp_bring.Visible = false;
             // 
             // dtp_productionDate
             // 
+            this.dtp_productionDate.Enabled = false;
             this.dtp_productionDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_productionDate.Location = new System.Drawing.Point(464, 5);
             this.dtp_productionDate.Name = "dtp_productionDate";
             this.dtp_productionDate.Size = new System.Drawing.Size(87, 20);
             this.dtp_productionDate.TabIndex = 0;
+            this.dtp_productionDate.Visible = false;
             // 
             // cb_personelRecord
             // 
+            this.cb_personelRecord.Enabled = false;
             this.cb_personelRecord.FormattingEnabled = true;
             this.cb_personelRecord.Location = new System.Drawing.Point(464, 54);
             this.cb_personelRecord.Name = "cb_personelRecord";
             this.cb_personelRecord.Size = new System.Drawing.Size(84, 21);
             this.cb_personelRecord.TabIndex = 12;
+            this.cb_personelRecord.Visible = false;
             // 
             // cb_fault
             // 
+            this.cb_fault.Enabled = false;
             this.cb_fault.FormattingEnabled = true;
             this.cb_fault.Location = new System.Drawing.Point(464, 84);
             this.cb_fault.Name = "cb_fault";
             this.cb_fault.Size = new System.Drawing.Size(84, 21);
             this.cb_fault.TabIndex = 12;
+            this.cb_fault.Visible = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Enabled = false;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label5.Location = new System.Drawing.Point(382, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 13);
             this.label5.TabIndex = 14;
             this.label5.Text = "Döküm Tarihi";
+            this.label5.Visible = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Enabled = false;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label6.Location = new System.Drawing.Point(381, 30);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 13);
             this.label6.TabIndex = 14;
             this.label6.Text = "Kontrol Tarihi";
+            this.label6.Visible = false;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Enabled = false;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label7.Location = new System.Drawing.Point(416, 54);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(31, 13);
             this.label7.TabIndex = 14;
             this.label7.Text = "Sicil";
+            this.label7.Visible = false;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Enabled = false;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label8.Location = new System.Drawing.Point(416, 84);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(34, 13);
             this.label8.TabIndex = 14;
             this.label8.Text = "Hata";
+            this.label8.Visible = false;
             // 
             // btn_bring
             // 
+            this.btn_bring.Enabled = false;
             this.btn_bring.Location = new System.Drawing.Point(585, 79);
             this.btn_bring.Name = "btn_bring";
             this.btn_bring.Size = new System.Drawing.Size(75, 23);
             this.btn_bring.TabIndex = 9;
             this.btn_bring.Text = "GETİR";
             this.btn_bring.UseVisualStyleBackColor = true;
+            this.btn_bring.Visible = false;
             this.btn_bring.Click += new System.EventHandler(this.btn_bring_Click);
             // 
             // cbx_productionDate
@@ -250,6 +275,7 @@
             this.cbx_productionDate.Size = new System.Drawing.Size(15, 14);
             this.cbx_productionDate.TabIndex = 15;
             this.cbx_productionDate.UseVisualStyleBackColor = true;
+            this.cbx_productionDate.Visible = false;
             // 
             // cbx_fault
             // 
@@ -259,6 +285,7 @@
             this.cbx_fault.Size = new System.Drawing.Size(15, 14);
             this.cbx_fault.TabIndex = 16;
             this.cbx_fault.UseVisualStyleBackColor = true;
+            this.cbx_fault.Visible = false;
             // 
             // cbx_personal
             // 
@@ -268,6 +295,7 @@
             this.cbx_personal.Size = new System.Drawing.Size(15, 14);
             this.cbx_personal.TabIndex = 17;
             this.cbx_personal.UseVisualStyleBackColor = true;
+            this.cbx_personal.Visible = false;
             // 
             // cbx_bring
             // 
@@ -277,24 +305,29 @@
             this.cbx_bring.Size = new System.Drawing.Size(15, 14);
             this.cbx_bring.TabIndex = 18;
             this.cbx_bring.UseVisualStyleBackColor = true;
+            this.cbx_bring.Visible = false;
             // 
             // cb_productCode
             // 
+            this.cb_productCode.Enabled = false;
             this.cb_productCode.FormattingEnabled = true;
             this.cb_productCode.Location = new System.Drawing.Point(464, 110);
             this.cb_productCode.Name = "cb_productCode";
             this.cb_productCode.Size = new System.Drawing.Size(84, 21);
             this.cb_productCode.TabIndex = 12;
+            this.cb_productCode.Visible = false;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Enabled = false;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label9.Location = new System.Drawing.Point(416, 110);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 13);
             this.label9.TabIndex = 14;
             this.label9.Text = "Kod";
+            this.label9.Visible = false;
             // 
             // cbx_productCode
             // 
@@ -304,12 +337,24 @@
             this.cbx_productCode.Size = new System.Drawing.Size(15, 14);
             this.cbx_productCode.TabIndex = 16;
             this.cbx_productCode.UseVisualStyleBackColor = true;
+            this.cbx_productCode.Visible = false;
+            // 
+            // tb_fault
+            // 
+            this.tb_fault.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tb_fault.Location = new System.Drawing.Point(12, 46);
+            this.tb_fault.Multiline = true;
+            this.tb_fault.Name = "tb_fault";
+            this.tb_fault.Size = new System.Drawing.Size(409, 85);
+            this.tb_fault.TabIndex = 19;
+            this.tb_fault.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_fault_KeyDown);
             // 
             // RetouchTracking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 613);
+            this.Controls.Add(this.tb_fault);
             this.Controls.Add(this.cbx_bring);
             this.Controls.Add(this.cbx_personal);
             this.Controls.Add(this.cbx_productCode);
@@ -333,12 +378,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv_list);
-            this.Controls.Add(this.cb_faultList);
             this.Controls.Add(this.tb_barcode);
-            this.MaximumSize = new System.Drawing.Size(894, 652);
             this.MinimumSize = new System.Drawing.Size(894, 652);
             this.Name = "RetouchTracking";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rötuş Takip";
             this.Load += new System.EventHandler(this.RetouchTracking_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_list)).EndInit();
@@ -351,7 +394,6 @@
 
         #endregion
         private System.Windows.Forms.TextBox tb_barcode;
-        private System.Windows.Forms.ComboBox cb_faultList;
         private System.Windows.Forms.DataGridView dgv_list;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -376,5 +418,6 @@
         private System.Windows.Forms.ComboBox cb_productCode;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox cbx_productCode;
+        private System.Windows.Forms.TextBox tb_fault;
     }
 }

@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Dynamic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -33,13 +34,9 @@ namespace RetouchBugTracking
             personelId = model.ID;
             loadGrid();
 
-            cb_faultList.ValueMember = "Id";
-            cb_faultList.DisplayMember = "errorDescription";
-            cb_faultList.DataSource = dm.getRetouchingMistakes();
-
-            cb_fault.ValueMember = "Id";
-            cb_fault.DisplayMember = "errorDescription";
-            cb_fault.DataSource = dm.getRetouchingMistakes();
+            //cb_faultList.ValueMember = "Id";
+            //cb_faultList.DisplayMember = "errorDescription";
+            //cb_faultList.DataSource = dm.getRetouchingMistakes();
 
             cb_personelRecord.ValueMember = "Kimlik";
             cb_personelRecord.DisplayMember = "defination";
@@ -48,6 +45,8 @@ namespace RetouchBugTracking
             cb_productCode.ValueMember = "Kimlik";
             cb_productCode.DisplayMember = "defination";
             cb_productCode.DataSource = dm.getCodeList();
+
+            tb_fault.Select();
         }
 
         private void loadGrid()
@@ -89,7 +88,9 @@ namespace RetouchBugTracking
             dgv_list.DataSource = dt;
 
             label4.Text = "Bakılan Ürün sayısı: " + dgv_list.RowCount.ToString();
-        } 
+
+            tb_fault.Select();
+        }
         private void loadGridByFilter()
         {
             var result = dm.logEntryListProductionDate(
@@ -147,11 +148,12 @@ namespace RetouchBugTracking
                         dm.retouchFaultAdd(new DataAccessLayer.RetouchTracking
                         {
                             barcode = tb_barcode.Text,
-                            retouchFaultID = Convert.ToInt16(cb_faultList.SelectedValue),
+                            retouchFaultID = Convert.ToInt16(tb_fault.Text),
                             retouchTransactionDate = DateTime.Now,
                             personnelRegisterID = Convert.ToInt16(personelId)
                         });
                         tb_barcode.Text = "";
+                        tb_fault.Text = "";
                     }
                     else
                     {
@@ -164,6 +166,17 @@ namespace RetouchBugTracking
                 }
             }
             loadGrid();
+        }
+
+        private void tb_fault_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (dm.isThereFault(Convert.ToByte(tb_fault.Text)) == true)
+                {
+                    tb_barcode.Focus();
+                }
+            }
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
@@ -196,5 +209,11 @@ namespace RetouchBugTracking
         {
 
         }
+
+        private void dgv_list_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
     }
 }

@@ -114,31 +114,31 @@ namespace DataAccessLayer
             finally { con.Close(); }
         }
 
-        public List<RetouchingMistakes> getRetouchingMistakes()
-        {
-            List<RetouchingMistakes> fault = new List<RetouchingMistakes>();
-            try
-            {
-                cmd.CommandText = "SELECT Id, HataTanim FROM RotusHatalari";
-                cmd.Parameters.Clear();
-                con.Open();
+        //public List<RetouchingMistakes> getRetouchingMistakes()
+        //{
+        //    List<RetouchingMistakes> fault = new List<RetouchingMistakes>();
+        //    try
+        //    {
+        //        cmd.CommandText = "SELECT Id, HataTanim FROM RotusHatalari";
+        //        cmd.Parameters.Clear();
+        //        con.Open();
 
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    RetouchingMistakes model = new RetouchingMistakes();
-                    model.ID = Convert.ToInt16(reader["Id"]);
-                    model.errorDescription = reader.GetString(1);
-                    fault.Add(model);
-                }
-                return fault;
-            }
-            catch
-            {
-                return null;
-            }
-            finally { con.Close(); }
-        }
+        //        SqlDataReader reader = cmd.ExecuteReader();
+        //        while (reader.Read())
+        //        {
+        //            RetouchingMistakes model = new RetouchingMistakes();
+        //            model.ID = Convert.ToInt16(reader["Id"]);
+        //            model.errorDescription = reader.GetString(1);
+        //            fault.Add(model);
+        //        }
+        //        return fault;
+        //    }
+        //    catch
+        //    {
+        //        return null;
+        //    }
+        //    finally { con.Close(); }
+        //}
         public List<PersonalRecord> getPersonalRecord()
         {
             List<PersonalRecord> personalRecords = new List<PersonalRecord>();
@@ -253,6 +253,40 @@ namespace DataAccessLayer
                 con.Open();
                 barcode = cmd.ExecuteScalar().ToString();
 
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally { con.Close(); }
+        }
+
+        public bool isThereFault(byte id)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT Id FROM RotusHatalari WHERE Id = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                id = Convert.ToByte(cmd.ExecuteScalar());
+                object result = cmd.ExecuteScalar();
+
+                if (result != null)
+                {
+                    if (result is byte)
+                    {
+                        id = (byte)result;
+                        return true;
+                    }
+                    else
+                    {
+                        // Dönüştürme başarısız oldu
+                        // Gerekirse uygun bir hata işleme mekanizması burada eklenebilir
+                    }
+                }
 
                 return true;
             }

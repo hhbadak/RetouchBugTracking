@@ -1,0 +1,115 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\USER\\Desktop\\Yedek Yaz\u0131l\u0131m\\R\u00F6tu\u015F Hata Takip\\RetouchBugTracking\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{846E5230-4C79-4889-AAC3-CF3E7017ED4A}|RetouchBugTracking\\RetouchBugTracking.csproj|c:\\users\\user\\desktop\\yedek yaz\u0131l\u0131m\\r\u00F6tu\u015F hata takip\\retouchbugtracking\\retouchbugtracking\\retouchtracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{846E5230-4C79-4889-AAC3-CF3E7017ED4A}|RetouchBugTracking\\RetouchBugTracking.csproj|solutionrelative:retouchbugtracking\\retouchtracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0F4EA64-0071-42C2-82CD-B39E98810985}|DataAccessLayer\\DataAccessLayer.csproj|C:\\Users\\USER\\Desktop\\Yedek Yaz\u0131l\u0131m\\R\u00F6tu\u015F Hata Takip\\RetouchBugTracking\\dataaccesslayer\\datamodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0F4EA64-0071-42C2-82CD-B39E98810985}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\datamodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{846E5230-4C79-4889-AAC3-CF3E7017ED4A}|RetouchBugTracking\\RetouchBugTracking.csproj|C:\\Users\\USER\\Desktop\\Yedek Yaz\u0131l\u0131m\\R\u00F6tu\u015F Hata Takip\\RetouchBugTracking\\retouchbugtracking\\retouchtracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{846E5230-4C79-4889-AAC3-CF3E7017ED4A}|RetouchBugTracking\\RetouchBugTracking.csproj|solutionrelative:retouchbugtracking\\retouchtracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0F4EA64-0071-42C2-82CD-B39E98810985}|DataAccessLayer\\DataAccessLayer.csproj|C:\\Users\\USER\\Desktop\\Yedek Yaz\u0131l\u0131m\\R\u00F6tu\u015F Hata Takip\\RetouchBugTracking\\dataaccesslayer\\retouchtracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0F4EA64-0071-42C2-82CD-B39E98810985}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\retouchtracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0F4EA64-0071-42C2-82CD-B39E98810985}|DataAccessLayer\\DataAccessLayer.csproj|C:\\Users\\USER\\Desktop\\Yedek Yaz\u0131l\u0131m\\R\u00F6tu\u015F Hata Takip\\RetouchBugTracking\\dataaccesslayer\\manufacturedproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0F4EA64-0071-42C2-82CD-B39E98810985}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\manufacturedproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{846E5230-4C79-4889-AAC3-CF3E7017ED4A}|RetouchBugTracking\\RetouchBugTracking.csproj|C:\\Users\\USER\\Desktop\\Yedek Yaz\u0131l\u0131m\\R\u00F6tu\u015F Hata Takip\\RetouchBugTracking\\retouchbugtracking\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{846E5230-4C79-4889-AAC3-CF3E7017ED4A}|RetouchBugTracking\\RetouchBugTracking.csproj|solutionrelative:retouchbugtracking\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ManufacturedProducts.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Yedek Yaz\u0131l\u0131m\\R\u00F6tu\u015F Hata Takip\\RetouchBugTracking\\DataAccessLayer\\ManufacturedProducts.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\ManufacturedProducts.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Yedek Yaz\u0131l\u0131m\\R\u00F6tu\u015F Hata Takip\\RetouchBugTracking\\DataAccessLayer\\ManufacturedProducts.cs",
+              "RelativeToolTip": "DataAccessLayer\\ManufacturedProducts.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBAAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T08:50:42.614Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RetouchTracking.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Yedek Yaz\u0131l\u0131m\\R\u00F6tu\u015F Hata Takip\\RetouchBugTracking\\DataAccessLayer\\RetouchTracking.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\RetouchTracking.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Yedek Yaz\u0131l\u0131m\\R\u00F6tu\u015F Hata Takip\\RetouchBugTracking\\DataAccessLayer\\RetouchTracking.cs",
+              "RelativeToolTip": "DataAccessLayer\\RetouchTracking.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T08:49:38.017Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RetouchTracking.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Yedek Yaz\u0131l\u0131m\\R\u00F6tu\u015F Hata Takip\\RetouchBugTracking\\RetouchBugTracking\\RetouchTracking.cs",
+              "RelativeDocumentMoniker": "RetouchBugTracking\\RetouchTracking.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Yedek Yaz\u0131l\u0131m\\R\u00F6tu\u015F Hata Takip\\RetouchBugTracking\\RetouchBugTracking\\RetouchTracking.cs [Design]",
+              "RelativeToolTip": "RetouchBugTracking\\RetouchTracking.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T06:09:35.917Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DataModel.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Yedek Yaz\u0131l\u0131m\\R\u00F6tu\u015F Hata Takip\\RetouchBugTracking\\DataAccessLayer\\DataModel.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\DataModel.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Yedek Yaz\u0131l\u0131m\\R\u00F6tu\u015F Hata Takip\\RetouchBugTracking\\DataAccessLayer\\DataModel.cs",
+              "RelativeToolTip": "DataAccessLayer\\DataModel.cs",
+              "ViewState": "AgIAACYBAAAAAAAAAAAUwDUBAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T08:42:03.584Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RetouchTracking.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Yedek Yaz\u0131l\u0131m\\R\u00F6tu\u015F Hata Takip\\RetouchBugTracking\\RetouchBugTracking\\RetouchTracking.cs",
+              "RelativeDocumentMoniker": "RetouchBugTracking\\RetouchTracking.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Yedek Yaz\u0131l\u0131m\\R\u00F6tu\u015F Hata Takip\\RetouchBugTracking\\RetouchBugTracking\\RetouchTracking.cs",
+              "RelativeToolTip": "RetouchBugTracking\\RetouchTracking.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAUwH0AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T08:28:07.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginPage.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Yedek Yaz\u0131l\u0131m\\R\u00F6tu\u015F Hata Takip\\RetouchBugTracking\\RetouchBugTracking\\LoginPage.cs",
+              "RelativeDocumentMoniker": "RetouchBugTracking\\LoginPage.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Yedek Yaz\u0131l\u0131m\\R\u00F6tu\u015F Hata Takip\\RetouchBugTracking\\RetouchBugTracking\\LoginPage.cs [Design]",
+              "RelativeToolTip": "RetouchBugTracking\\LoginPage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T06:09:32.28Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

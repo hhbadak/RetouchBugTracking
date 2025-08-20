@@ -12,6 +12,7 @@ namespace DataAccessLayer
         public Int16 retouchFaultID { get; set; }
         public string retouchFault { get; set; }
         public DateTime retouchTransactionDate { get; set; }
+        public DateTime retouchTransactionDateFinish { get; set; }
         public Int16 personnelRegisterID { get; set; }
         public string personalID { get; set; }
         public string username { get; set; }

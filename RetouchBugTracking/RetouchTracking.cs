@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Dynamic;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,17 +23,12 @@ namespace RetouchBugTracking
 
         private void RetouchTracking_Load(object sender, EventArgs e)
         {
-
             LoginPage frm = new LoginPage();
             frm.ShowDialog();
             Staff model = Helpers.isLogin;
             toolStripStatusLabel1.Text = model.nameSurname;
             personelId = model.ID;
             loadGrid();
-
-            cb_faultList.ValueMember = "Id";
-            cb_faultList.DisplayMember = "errorDescription";
-            cb_faultList.DataSource = dm.getRetouchingMistakes();
 
             cb_fault.ValueMember = "Id";
             cb_fault.DisplayMember = "errorDescription";
@@ -89,19 +82,28 @@ namespace RetouchBugTracking
             dgv_list.DataSource = dt;
 
             label4.Text = "Bakılan Ürün sayısı: " + dgv_list.RowCount.ToString();
-        } 
+        }
+
         private void loadGridByFilter()
         {
             var result = dm.logEntryListProductionDate(
                 new DataAccessLayer.RetouchTracking
                 {
                     retouchTransactionDate = Convert.ToDateTime(dtp_bring.Value.ToShortDateString()),
+                    retouchTransactionDateFinish = Convert.ToDateTime(dtp_bringFinish.Value.ToShortDateString()),
                     retouchFault = cb_fault.Text,
                     personalID = cb_personelRecord.Text,
                     productTime = Convert.ToDateTime(dtp_productionDate.Value.ToShortDateString()),
-                    definition = cb_productCode.Text,
+                    productTimeFinish = Convert.ToDateTime(dtp_productionDateFinish.Value.ToShortDateString()),
+                    definition = cb_productCode.Text
                 },
-                cbx_fault.Checked, cbx_personal.Checked, cbx_productCode.Checked, cbx_productionDate.Checked, cbx_bring.Checked); ;
+                cbx_fault.Checked,
+                cbx_personal.Checked,
+                cbx_productCode.Checked,
+                cbx_productionDate.Checked,
+                cbx_bring.Checked,
+                cbx_productionDateFinish.Checked,
+                cbx_bringFnish.Checked);
 
             dgv_list.DataSource = result;
             var rt = result.OrderByDescending(r => r.RetouchTrackingID).ToList();
@@ -136,36 +138,6 @@ namespace RetouchBugTracking
             label4.Text = "Bakılan Ürün sayısı: " + dgv_list.RowCount.ToString();
         }
 
-        private void tb_barcode_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (tb_barcode.Text.Length == 10)
-                {
-                    if (dm.isThereBarcode(tb_barcode.Text) != true)
-                    {
-                        dm.retouchFaultAdd(new DataAccessLayer.RetouchTracking
-                        {
-                            barcode = tb_barcode.Text,
-                            retouchFaultID = Convert.ToInt16(cb_faultList.SelectedValue),
-                            retouchTransactionDate = DateTime.Now,
-                            personnelRegisterID = Convert.ToInt16(personelId)
-                        });
-                        tb_barcode.Text = "";
-                    }
-                    else
-                    {
-                        MessageBox.Show("Barkod Kayıtlı");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Geçerli Barkod Numarası Giriniz");
-                }
-            }
-            loadGrid();
-        }
-
         private void btn_delete_Click(object sender, EventArgs e)
         {
             dm.deleteFault(retouchFaultID);
@@ -179,7 +151,6 @@ namespace RetouchBugTracking
 
         private void btn_bring_Click(object sender, EventArgs e)
         {
-
             loadGridByFilter();
         }
 
@@ -189,12 +160,10 @@ namespace RetouchBugTracking
 
         private void btn_fault_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btn_personelRecord_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

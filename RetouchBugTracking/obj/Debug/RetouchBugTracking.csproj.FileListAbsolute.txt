@@ -13,3 +13,32 @@ C:\Users\HsnHs\OneDrive\Belgeler\GitHub\RetouchBugTracking\RetouchBugTracking\bi
 C:\Users\HsnHs\OneDrive\Belgeler\GitHub\RetouchBugTracking\RetouchBugTracking\bin\Debug\DataAccessLayer.pdb
 C:\Users\HsnHs\OneDrive\Belgeler\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.csproj.CopyComplete
 C:\Users\HsnHs\OneDrive\Belgeler\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.LoginPage.resources
+C:\Users\USER\Documents\GitHub\RetouchBugTracking\RetouchBugTracking\bin\Debug\RetouchBugTracking.exe.config
+C:\Users\USER\Documents\GitHub\RetouchBugTracking\RetouchBugTracking\bin\Debug\RetouchBugTracking.exe
+C:\Users\USER\Documents\GitHub\RetouchBugTracking\RetouchBugTracking\bin\Debug\RetouchBugTracking.pdb
+C:\Users\USER\Documents\GitHub\RetouchBugTracking\RetouchBugTracking\bin\Debug\DataAccessLayer.dll
+C:\Users\USER\Documents\GitHub\RetouchBugTracking\RetouchBugTracking\bin\Debug\DataAccessLayer.pdb
+C:\Users\USER\Documents\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.csproj.AssemblyReference.cache
+C:\Users\USER\Documents\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.csproj.SuggestedBindingRedirects.cache
+C:\Users\USER\Documents\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.LoginPage.resources
+C:\Users\USER\Documents\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.Properties.Resources.resources
+C:\Users\USER\Documents\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.RetouchTracking.resources
+C:\Users\USER\Documents\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.csproj.GenerateResource.cache
+C:\Users\USER\Documents\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.csproj.CoreCompileInputs.cache
+C:\Users\USER\Documents\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.csproj.CopyComplete
+C:\Users\USER\Documents\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.exe
+C:\Users\USER\Documents\GitHub\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.pdb
+C:\Users\USER\Desktop\Yedek Yazılım\Rötuş Hata Takip\RetouchBugTracking\RetouchBugTracking\bin\Debug\RetouchBugTracking.exe.config
+C:\Users\USER\Desktop\Yedek Yazılım\Rötuş Hata Takip\RetouchBugTracking\RetouchBugTracking\bin\Debug\RetouchBugTracking.exe
+C:\Users\USER\Desktop\Yedek Yazılım\Rötuş Hata Takip\RetouchBugTracking\RetouchBugTracking\bin\Debug\RetouchBugTracking.pdb
+C:\Users\USER\Desktop\Yedek Yazılım\Rötuş Hata Takip\RetouchBugTracking\RetouchBugTracking\bin\Debug\DataAccessLayer.dll
+C:\Users\USER\Desktop\Yedek Yazılım\Rötuş Hata Takip\RetouchBugTracking\RetouchBugTracking\bin\Debug\DataAccessLayer.pdb
+C:\Users\USER\Desktop\Yedek Yazılım\Rötuş Hata Takip\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\Yedek Yazılım\Rötuş Hata Takip\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.LoginPage.resources
+C:\Users\USER\Desktop\Yedek Yazılım\Rötuş Hata Takip\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.Properties.Resources.resources
+C:\Users\USER\Desktop\Yedek Yazılım\Rötuş Hata Takip\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.RetouchTracking.resources
+C:\Users\USER\Desktop\Yedek Yazılım\Rötuş Hata Takip\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.csproj.GenerateResource.cache
+C:\Users\USER\Desktop\Yedek Yazılım\Rötuş Hata Takip\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\Yedek Yazılım\Rötuş Hata Takip\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.exe
+C:\Users\USER\Desktop\Yedek Yazılım\Rötuş Hata Takip\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchBugTracking.pdb
+C:\Users\USER\Desktop\Yedek Yazılım\Rötuş Hata Takip\RetouchBugTracking\RetouchBugTracking\obj\Debug\RetouchB.E383FB34.Up2Date

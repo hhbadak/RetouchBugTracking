@@ -15,6 +15,7 @@ namespace DataAccessLayer
         public Int16 quantity { get; set; }
         public string status { get; set; }
         public DateTime productTime { get; set; }
+        public DateTime productTimeFinish { get; set; }
         public int benchMoldID { get; set; }
         public string benchMold { get; set; }
         public int workbenchID { get; set; }

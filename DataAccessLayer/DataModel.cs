@@ -17,11 +17,8 @@ namespace DataAccessLayer
             cmd = con.CreateCommand();
         }
 
-
-
         public List<RetouchTracking> logEntryListBySelectedDate(RetouchTracking src)
         {
-
             List<RetouchTracking> rt = new List<RetouchTracking>();
             try
             {
@@ -54,18 +51,28 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
-        public List<RetouchTracking> logEntryListProductionDate(RetouchTracking src, bool fault, bool personalRecord, bool productCode, bool productDate, bool controlDate)
+
+        public List<RetouchTracking> logEntryListProductionDate(RetouchTracking src, bool fault, bool personalRecord, bool productCode, bool productDate, bool controlDate, bool productDateFinish, bool controlDateFinish)
         {
             List<RetouchTracking> rt = new List<RetouchTracking>();
             try
             {
-                cmd.CommandText = queryText(fault, personalRecord, productCode, productDate, controlDate);
+                cmd.CommandText = queryText(fault, personalRecord, productCode, productDate, controlDate, productDateFinish, controlDateFinish);
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@RotusHata", src.retouchFault);
-                cmd.Parameters.AddWithValue("@Islemtarih", src.retouchTransactionDate);
-                cmd.Parameters.AddWithValue("@PersonelSicil", src.personalID);
-                cmd.Parameters.AddWithValue("@productDate", src.productTime);
-                cmd.Parameters.AddWithValue("@productCode", src.definition);
+                if (fault)
+                    cmd.Parameters.AddWithValue("@RotusHata", src.retouchFault);
+                if (controlDate)
+                    cmd.Parameters.AddWithValue("@Islemtarih", src.retouchTransactionDate);
+                if (personalRecord)
+                    cmd.Parameters.AddWithValue("@PersonelSicil", src.personalID);
+                if (productDate)
+                    cmd.Parameters.AddWithValue("@productDate", src.productTime);
+                if (productCode)
+                    cmd.Parameters.AddWithValue("@productCode", src.definition);
+                if (productDateFinish)
+                    cmd.Parameters.AddWithValue("@productDateFinish", src.productTimeFinish);
+                if (controlDateFinish)
+                    cmd.Parameters.AddWithValue("@controlDateFinish", src.retouchTransactionDateFinish);
                 con.Open();
 
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -139,6 +146,7 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
+
         public List<PersonalRecord> getPersonalRecord()
         {
             List<PersonalRecord> personalRecords = new List<PersonalRecord>();
@@ -163,6 +171,7 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
+
         public List<CodeList> getCodeList()
         {
             List<CodeList> listCode = new List<CodeList>();
@@ -187,6 +196,7 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
+
         public Staff getPersonal(int id)
         {
             try
@@ -234,7 +244,6 @@ namespace DataAccessLayer
                     model = getPersonal(id);
                 }
                 return model;
-
             }
             catch
             {
@@ -252,8 +261,6 @@ namespace DataAccessLayer
                 cmd.Parameters.AddWithValue("@barcode", barcode);
                 con.Open();
                 barcode = cmd.ExecuteScalar().ToString();
-
-
                 return true;
             }
             catch
@@ -280,19 +287,22 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
-        public string queryText(bool fault, bool personalRecord, bool productCode, bool productDate, bool controlDate)
+
+        public string queryText(bool fault, bool personalRecord, bool productCode, bool productDate, bool controlDate, bool productDateFinish, bool controlDateFinish)
         {
             try
             {
-                string query = "SELECT rt.ID, rt.Barkod, kl.tanim, rh.HataTanim, rt.IslemTarih, p.KullaniciAd, dsl.tanim, u.DokumTarih FROM RotusTakip AS rt\r\nJOIN UT_D_Urunler AS u ON rt.Barkod = u.BarkodNo\r\nJOIN RotusHatalari AS rh ON rh.Id = rt.RotusHata_ID\r\nJOIN ES_Personeller AS p ON p.PersonelId = rt.PersonelSicil_ID\r\nJOIN dokum_sicil_liste AS dsl ON dsl.Kimlik = u.DokumcuId\r\nJOIN kod_liste AS kl ON kl.Kimlik = u.TezgahKalipId\r\nJOIN UT_D_Tezgahlar as t ON t.Id = u.TezgahId WHERE 1= 1 ";
+                string query = "SELECT rt.ID, rt.Barkod, kl.tanim, rh.HataTanim, rt.IslemTarih, p.KullaniciAd, dsl.tanim, u.DokumTarih FROM RotusTakip AS rt\r\nJOIN UT_D_Urunler AS u ON rt.Barkod = u.BarkodNo\r\nJOIN RotusHatalari AS rh ON rh.Id = rt.RotusHata_ID\r\nJOIN ES_Personeller AS p ON p.PersonelId = rt.PersonelSicil_ID\r\nJOIN dokum_sicil_liste AS dsl ON dsl.Kimlik = u.DokumcuId\r\nJOIN kod_liste AS kl ON kl.Kimlik = u.TezgahKalipId\r\nJOIN UT_D_Tezgahlar as t ON t.Id = u.TezgahId WHERE 1=1 ";
 
                 string parameterFault = " rh.HataTanim=@RotusHata ";
-                string parameterControlDate = " rt.IslemTarih=@Islemtarih ";
-                string parameterPersonalRecord = "dsl.tanim=@PersonelSicil ";
-                string parameterProductDate = " u.DokumTarih=@productDate ";
+                string parameterControlDate = " rt.IslemTarih>=@Islemtarih ";
+                string parameterControlDateFinish = " rt.IslemTarih<=@controlDateFinish ";
+                string parameterPersonalRecord = " dsl.tanim=@PersonelSicil ";
+                string parameterProductDate = " u.DokumTarih>=@productDate ";
+                string parameterProductDateFinish = " u.DokumTarih<=@productDateFinish ";
                 string parameterProductCode = " kl.tanim=@productCode ";
 
-                string and = "and ";
+                string and = "AND ";
 
                 string mainQuery = query;
                 if (fault)
@@ -315,8 +325,15 @@ namespace DataAccessLayer
                 {
                     mainQuery = mainQuery + and + parameterControlDate;
                 }
-                var result = mainQuery;
-                return result;
+                if (productDateFinish)
+                {
+                    mainQuery = mainQuery + and + parameterProductDateFinish;
+                }
+                if (controlDateFinish)
+                {
+                    mainQuery = mainQuery + and + parameterControlDateFinish;
+                }
+                return mainQuery;
             }
             finally
             {
